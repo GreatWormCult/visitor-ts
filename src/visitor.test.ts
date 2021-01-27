@@ -80,6 +80,15 @@ test('all payments of employee[]', t => t.deepEqual<Payment[]>(
     [normalPayment, paymentWithBonus, noPayment]
 ));
 
+const tester = {
+    tester(val: string) {
+        return val;
+    }
+}
+
+const testerVisitor = new Visitor(tester, "default", "funName", "val");
+testerVisitor.one({funName: "tester", val: "A"})
+
 // function canculatePayment(e: Employee) {
 //     switch(e.name) {
 //         case "worker":
